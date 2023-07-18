@@ -1,0 +1,12 @@
+first line for logging
+second line for logging
+third line
+forth line111
+first line for logging
+second line for logging
+third line
+forth line111
+first line for logging
+second line for logging
+third line
+forth line111
