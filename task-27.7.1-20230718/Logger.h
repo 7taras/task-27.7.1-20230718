@@ -1,18 +1,19 @@
 #pragma once
 
 #include <iostream>
-#include <cstdlib> // for use exit()
 #include <fstream>
+#include <shared_mutex>
+#include <string>
 
 class Logger
 {
 private:
 	std::fstream iofile;
-
+	std::shared_mutex shared_mutex;
 public:
 	Logger()
 	{
-		std::fstream iofile("log.txt", std::ios::in | std::ios::out);
+		std::fstream iofile("log.txt", std::ios::in | std::ios::out | std::ios::app);
 	}
 	~Logger()
 	{
