@@ -14,13 +14,17 @@ public:
 	Logger()
 	{
 		std::fstream iofile("log.txt", std::ios::in | std::ios::out | std::ios::app);
+		if (!iofile)
+		{
+			std::cerr << "log.txt could not be opened for writing!" << std::endl;
+		}
 	}
 	~Logger()
 	{
 		iofile.close();
 	}
 	
-	bool writeLine(const std::string& text);
-	bool readLine(std::string& text);
+	void writeLine(const std::string& text);
+	void readLine(std::string& text, int numberOfLine);
 };
 
